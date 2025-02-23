@@ -1,99 +1,76 @@
-# 🚀 Flexiyo: Powering a Scalable App for Just $27/Month
+# How We Pay Only \$27 for Flexiyo 🚀
 
-Building a slick, cost-effective cloud setup for **Flexiyo** takes clever picks. We’ve nailed it with **Railway** for backend magic, **Wasabi** for cheap storage, and **Cloudflare** for lightning-fast CDN and security. Here’s the lowdown on our **monthly costs**, why this stack rocks, and how shared resources keep it humming.
-
----
-
-## ⚡ **Railway: Backend & Databases**
-
-| Service              | Plan  | vCPU | RAM   | Cost    |
-|----------------------|-------|------|-------|---------|
-| **PostgreSQL (fiyopgdb)** | Pro   | 8    | 12 GB | Included |
-| **MongoDB (fiyomgdb)**    | Pro   | 6    | 8 GB  | Included |
-| **APIs (fiyoauth, fiyomain)** | Pro   | 6 each | 4 GB each | Included |
-| **RedisDB (fiyorsdb)**    | Hobby | 6    | 4 GB  | Included |
-| **WebSockets (fiyochat)** | Pro   | 8    | 8 GB  | Included |
-
-### Why Railway & Shared Resources?
-Railway’s Pro plan gives us 32 vCPUs and 32 GB RAM—shared across all users on the platform, not just Flexiyo. That means our services (DBs, APIs, WebSockets) tap into a warm pool of resources that stay ready. No cold starts, just instant action when traffic hits.
-
-- **Why We Use It**:  
-  - 🌟 **Warm Resources**: No spinning up from scratch—services are always live, cutting startup lag to zero.  
-  - ⚡ **Flat $20/month**: Everything fits in the Pro plan, with Redis on Hobby for caching kicks.  
-  - 🛠 **Flexibility**: Resources shift dynamically—idle services free up power for others, keeping costs low.
-
-- **Pros**:  
-  - 🚀 **No Cold Starts**: Instant scaling for APIs and WebSockets.  
-  - 💸 **Budget-Friendly**: $20 covers a fat stack of services.  
-  - ⚡ **Fast Deploys**: Railway’s setup keeps dev time tight.
-
-- **Cons**:  
-  - 📉 **Throttling Risk**: If other users hog the 32/32 pool, our services might slow down during peaks.  
-  - 🤔 **Unpredictable**: Shared means we’re at the mercy of Railway’s load—could feel the squeeze at 50,000 users.  
-  - 🔧 **Less Control**: No dedicated slice, so tuning’s limited.
+Building a powerful yet cost-effective cloud infrastructure for **Flexiyo** requires smart choices. We've optimized our setup using **Railway Pro for backend hosting, Wasabi for object storage, and Cloudflare for CDN and security**. Here’s a modern breakdown of our **monthly costs** and why this setup works best.
 
 ---
 
-## 🌐 **Cloudflare: CDN & Static Hosting**
+## 🚀 **Railway Pro (Backend Hosting & Databases)**
 
-| Service          | Plan | Features                       | Cost |
-|------------------|------|--------------------------------|------|
-| **CDN (fiyocdn)**| Free | Global CDN, DDoS Shield, SSL   | $0   |
-| **Pages (fiyo)** | Free | Static Hosting, Zero Hassle    | $0   |
+| Service                       | vCPU        | RAM       |
+| ----------------------------- | ----------- | --------- |
+| **PostgreSQL (fiyopgdb)**     | 6 vCPU      | 8 GB      |
+| **MongoDB (fiyomgdb)**        | 4 vCPU      | 6 GB      |
+| **APIs (fiyoauth, fiyomain)** | 6 vCPU each | 4 GB each |
+| **WebSockets (fiyochat)**     | 8 vCPU      | 6 GB      |
+| **RedisDB (fiyorsdb)**        | 2 vCPU      | 4 GB      |
 
-**Why Cloudflare?**  
-- 🌍 **Free global CDN**: Speedy delivery, locked-down traffic.  
-- 📄 **Static hosting for free**: No compute costs, all edge.
+✅ **Why Railway Pro?**
 
----
-
-## 💿 **Wasabi: Object Storage**
-
-| Service           | Plan         | Storage | Cost    |
-|-------------------|--------------|---------|---------|
-| **Object Storage (fiyost)** | Pay-as-you-go | 1 TB    | $6.99   |
-
-**Why Wasabi?**  
-- 💸 **No sneaky fees**: Egress and API calls? Free. Perfect for media.  
-- 🏦 **Cheaper than S3**: High reliability, low price.
+- **Fixed-cost backend** – Pro plan includes all backend services within \$20/month.
+- **Balanced resource allocation** for optimal performance and cost-efficiency.
 
 ---
 
-## 💵 **Total Monthly Cost**
+## 🌍 **Cloudflare (CDN & Static Web Hosting)**
 
-| Provider      | Cost    |
-|---------------|---------|
-| **Railway**   | $20.00  |
-| **Wasabi**    | $6.99   |
-| **Cloudflare**| $0.00   |
-| **Total**     | **$26.99** |
+| Service           | Features                              |
+| ----------------- | ------------------------------------- |
+| **CDN (fiyocdn)** | Global CDN, DDoS Protection, Free SSL |
+| **Pages (fiyo)**  | Static Web Hosting                    |
 
----
+✅ **Why Cloudflare?**
 
-## 🔥 **Why This Stack Slaps**
-
-- **Scales Like a Dream**: APIs, WebSockets, and DBs run smooth (mostly).  
-- **Storage That Saves**: Predictable costs, no surprises.  
-- **CDN & Hosting Freebies**: Speed and security, zero spend.  
-- **Locked at $26.99**: Budget-friendly brilliance—shared resources keep it cheap.
-
-Check out the **average latency** at 50,000 users—proof it’s fast, with shared resource caveats:
-
-| Service                  | Avg Latency  |
-|--------------------------|--------------|
-| **PostgreSQL (fiyopgdb)**| 20-40 ms     |
-| **MongoDB (fiyomgdb)**   | 20-40 ms     |
-| **APIs (fiyoauth)**      | 30-50 ms     |
-| **APIs (fiyomain)**      | 30-50 ms     |
-| **WebSockets (fiyochat)**| 60-80 ms     |
-| **RedisDB (fiyorsdb)**   | 0-15 ms      |
-| **Cloudflare CDN (fiyocdn)** | 10-20 ms |
-| **Cloudflare Pages (fiyo)**  | 10-20 ms |
-| **Wasabi (fiyost)**      | 100-120 ms   |
+- **Free global CDN** speeds up content delivery while securing traffic.
+- **Static hosting at zero cost**, avoiding unnecessary compute expenses.
 
 ---
 
-## 🌟 **The Bottom Line**
-For just **$26.99/month**, Flexiyo delivers a **high-performance, scalable, budget-friendly infra**—thanks to Railway’s shared 32/32 pool keeping things warm and cheap. It’s a trade-off: no cold starts and low costs vs. potential throttling if the platform’s busy. Smart choices = big wins, but keep an eye on peak loads.
+## 💾 **Wasabi (Object Storage)**
 
-**Got ideas for tweaks or metrics? Hit me up!** 😎
+| Service                     | Storage              |
+| --------------------------- | -------------------- |
+| **Object Storage (fiyost)** | 1TB (No egress fees) |
+
+✅ **Why Wasabi?**
+
+- **No egress or API fees**, making it **perfect for media storage**.
+- **More affordable than AWS S3**, while maintaining high reliability.
+
+---
+
+## 💰 **Total Monthly Cost**
+
+| Provider        | Cost (\$)   |
+| --------------- | ----------- |
+| **Railway Pro** | 20          |
+| **Wasabi**      | 6.99        |
+| **Cloudflare**  | 0           |
+| **Total**       | **\$26.99** |
+
+---
+
+## 🔥 **Why This Setup Works?**
+
+✅ **Scalable Backend** – Handles APIs, WebSockets, and databases efficiently.  
+✅ **Cost-Effective Storage** – No hidden fees, predictable costs.  
+✅ **Free CDN & Hosting** – Performance boost with no extra spending.  
+✅ **Fixed Cost Strategy** – **Everything runs at just \$26.99/month**.  
+
+---
+
+## 🚀 **Conclusion**
+
+For **just \$26.99 per month**, Flexiyo runs on a **high-performance, scalable, and cost-efficient infrastructure**. This **smart allocation** balances backend power, secure storage, and free CDN services.
+
+**Want further optimizations or monitoring insights? Let’s discuss!** 😊
+
