@@ -14,6 +14,16 @@ Flexiyo runs lean and mean with a slick infra powered by **Railway**, **Cloudfla
 | WebSockets (fiyochat)     | 8 vCPU      | 6 GB       |
 | RedisDB (fiyorsdb)        | 2 vCPU      | 4 GB       |
 
+## ⚡ **Railway Hobby Plan**
+
+| **Service**               | **CPU**     | **Memory** |
+|---------------------------|-------------|------------|
+| PostgreSQL (fiyopgdb)     | 1 vCPU      | 2 GB       |
+| MongoDB (fiyomgdb)        | 1 vCPU      | 1 GB       |
+| APIs (fiyoauth, fiyomain) | 2 vCPU each | 1 GB each  |
+| WebSockets (fiyochat)     | 2 vCPU      | 2 GB       |
+| RedisDB (fiyorsdb)        | 1 vCPU      | 1 GB       |
+
 ### Why Railway’s Shared Setup?
 Railway’s Pro plan hooks us up with 32 vCPUs and 32 GB RAM—shared across all users, not just Flexiyo. Our services sip from this warm pool, staying live with no cold-start nonsense.
 
