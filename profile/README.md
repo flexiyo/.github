@@ -23,4 +23,4 @@ Flexiyo is powered by cutting-edge technology:
 ## 📢 Get Involved
 Join our growing community and be part of the next big thing in social media and music.
 
-🔗 [Website](https://flexiyo.web,app)  |  📱 [fiyonv](https://github.com/flexiyo/fiyonv)  |  📩 Contact: flexiyo02@gmail.com
+🔗 [Website](https://flexiyo.web.app)  |  📱 [fiyonv](https://github.com/flexiyo/fiyonv)  |  📩 Contact: flexiyo02@gmail.com
